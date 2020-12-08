@@ -1,0 +1,32 @@
+<!-- <label class="control-label"> {{label1}}<span class="red">*</span></label> --> 
+<!-- <mat-form-field class=""> -->
+ 
+
+  <!-- <mat-form-field class=""> -->
+
+ <!-- <input matInput maxlength="100" type="text" class="form-control"
+ formControlName="label1" >   -->
+ <!-- <mat-label>{{label1}}</mat-label>
+ <mat-error class="mat-error " *ngIf="!controll.valid && controll.touched">
+  {{error}} 
+</mat-error>   -->
+
+
+<label *ngIf="label1" class="control-label"> {{label1}}<span class="red">*</span></label>
+
+<span class="error" *ngIf="controll && !controll.valid && controll.touched"> {{error}} </span>
+
+
+  <!-- </mat-form-field> -->
+<!-- </mat-form-field> -->
+<!-- 
+<mat-form-field class="">
+  <mat-label>{{label1}}</mat-label>
+  <input matInput maxlength="50" type="text" class="form-control" id="name"
+  formControlName="controll.name" placeholder="label1">  
+
+  <div class="error alert-danger" *ngIf="!controll.valid && controll.touched">
+    {{error}}
+  </div>
+
+</mat-form-field> -->

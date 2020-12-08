@@ -1,0 +1,227 @@
+<!-- <app-my-input  label="username" formControlName="username"  [errors]="employeeForm.controls.username" ></app-my-input> -->
+
+<a class="btn btn-primary pull-left" routerLink = "/show-emplist" routerLinkActive="active-link"> Show Emp</a>
+<br>
+<br>
+<div class="mat-app-background ">
+  <div class="row">
+    <div class="col-lg-2">
+    </div>
+    <div class="col-lg-6 empForm">
+      <form [formGroup]="employeeForm" novalidate autocomplete="off" (ngSubmit)="save()">
+
+        <div class="row pt-1" *ngIf="employeeForm.controls['id'].value">
+          <div class="col-md-5">
+            <div class="form-group">
+              <app-my-input [lbl]="'Id'"></app-my-input>
+              <input matInput  type="text" class="form-control" formControlName="id">
+              <app-my-input [errors]="employeeForm.controls['id'].errors" [ctrl]="employeeForm.controls['id']">
+              </app-my-input>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <div class="row pt-1">
+            <div class="col-md-5">
+              <div class="form-group">
+                <app-my-input [lbl]="'Name'"></app-my-input>
+                <input matInput  type="text" class="form-control" formControlName="name">
+                <app-my-input [errors]="employeeForm.controls['name'].errors" [ctrl]="employeeForm.controls['name']">
+                </app-my-input>
+
+                <!-- <app-my-input
+        [errors]="employeeForm.controls['name'].errors" [lbl]="'Name'" [ctrl]="employeeForm.controls['name']"></app-my-input> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row pt-1">
+          <div class="col-md-5">
+            <div class="form-group">
+              <app-my-input [lbl]="'User Name'"></app-my-input>
+              <input  type="text" class="form-control" formControlName="username">
+              <app-my-input [errors]="employeeForm.controls['username'].errors"
+                [ctrl]="employeeForm.controls['username']">
+              </app-my-input>
+            </div>
+          </div>
+        </div>
+
+        <div class="row pt-1">
+          <div class="col-md-5">
+            <div class="form-group">
+              <app-my-input [lbl]="'Email'"></app-my-input>
+              <input  type="text" class="form-control" formControlName="email">
+              <app-my-input [errors]="employeeForm.controls['email'].errors" [ctrl]="employeeForm.controls['email']">
+              </app-my-input>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+        <label> Address</label>
+        <div formGroupName="address">
+          <div class="row pt-1">
+            <div class="col-md-5">
+              <div class="form-group">
+                <app-my-input [lbl]="'Street'"></app-my-input>
+                <input  type="text" class="form-control" formControlName="street">
+                <app-my-input [errors]="employeeForm.controls['street']" [ctrl]="employeeForm.controls['street']">
+                </app-my-input>
+
+                <!-- [errors]="employeeForm.controls['street'].errors" -->
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row pt-1">
+            <div class="col-md-5">
+              <div class="form-group">
+                <app-my-input [lbl]="'suite'"></app-my-input>
+                <input  type="text" class="form-control" formControlName="suite">
+                <app-my-input [errors]="employeeForm.controls['suite']" [ctrl]="employeeForm.controls['suite']">
+                  <!-- [errors]="employeeForm.controls['suite'].errors" -->
+                </app-my-input>
+              </div>
+            </div>
+          </div>
+
+          <div class="row pt-1">
+            <div class="col-md-5">
+              <div class="form-group">
+                <app-my-input [lbl]="'City'"></app-my-input>
+                <input  type="text" class="form-control" formControlName="city">
+                <app-my-input [errors]="employeeForm.controls['city']" [ctrl]="employeeForm.controls['city']">
+                  <!-- [errors]="employeeForm.controls['city'].errors" -->
+                </app-my-input>
+              </div>
+            </div>
+          </div>
+
+          <div class="row pt-1">
+            <div class="col-md-5">
+              <div class="form-group">
+                <app-my-input [lbl]="'zipcode'"></app-my-input>
+                <input  type="text" class="form-control" formControlName="zipcode">
+                <app-my-input [errors]="employeeForm.controls['zipcode']" [ctrl]="employeeForm.controls['zipcode']">
+                  <!-- [errors]="employeeForm.controls['zipcode'].errors" -->
+                </app-my-input>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <label> Geo location</label>
+          <div formGroupName="geo">
+
+            <div class="row pt-1">
+              <div class="col-md-5">
+                <div class="form-group">
+                  <app-my-input [lbl]="'Latitude'"></app-my-input>
+                  <input  type="text" class="form-control" formControlName="lat">
+                  <app-my-input [errors]="employeeForm.controls['lat']" [ctrl]="employeeForm.controls['lat']">
+                    <!-- [errors]="employeeForm.controls['lat'].errors" -->
+                  </app-my-input>
+                </div>
+              </div>
+            </div>
+            <div class="row pt-1">
+              <div class="col-md-5">
+                <div class="form-group">
+                  <app-my-input [lbl]="'Longitude'"></app-my-input>
+                  <input  type="text" class="form-control" formControlName="lng">
+                  <app-my-input [errors]="employeeForm.controls['lng']" [ctrl]="employeeForm.controls['lng']">
+                    <!-- [errors]="employeeForm.controls['lng'].errors" -->
+                  </app-my-input>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row pt-1">
+          <div class="col-md-5">
+            <div class="form-group">
+              <app-my-input [lbl]="'Phone'"></app-my-input>
+              <input  type="text" class="form-control" formControlName="phone">
+              <app-my-input [errors]="employeeForm.controls['phone'].errors" [ctrl]="employeeForm.controls['phone']">
+              </app-my-input>
+            </div>
+          </div>
+        </div>
+
+        <div class="row pt-1">
+          <div class="col-md-5">
+            <div class="form-group">
+              <app-my-input [lbl]="'Website'"></app-my-input>
+              <input  type="text" class="form-control" formControlName="website">
+              <app-my-input [errors]="employeeForm.controls['website'].errors"
+                [ctrl]="employeeForm.controls['website']">
+              </app-my-input>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <label> Company</label>
+        <div formGroupName="company">
+
+          <div class="row pt-1">
+            <div class="col-md-5">
+              <div class="form-group">
+                <app-my-input [lbl]="' Name'"></app-my-input>
+                <input  type="text" class="form-control" formControlName="name">
+                <app-my-input [errors]="employeeForm.controls['name']" [ctrl]="employeeForm.controls['name']">
+                  <!-- [errors]="employeeForm.controls['name'].errors"  -->
+                </app-my-input>
+              </div>
+            </div>
+          </div>
+          <div class="row pt-1">
+            <div class="col-md-5">
+              <div class="form-group">
+                <app-my-input [lbl]="'catchPhrase'"></app-my-input>
+                <input  type="text" class="form-control" formControlName="catchPhrase">
+                <app-my-input [errors]="employeeForm.controls['catchPhrase']"
+                  [ctrl]="employeeForm.controls['catchPhrase']">
+                  <!-- [errors]="employeeForm.controls['catchPhrase'].errors" -->
+                </app-my-input>
+              </div>
+            </div>
+          </div>
+          <div class="row pt-1">
+            <div class="col-md-5">
+              <div class="form-group">
+                <app-my-input [lbl]="'Bs'"></app-my-input>
+                <input  type="text" class="form-control" formControlName="bs">
+                <app-my-input [errors]="employeeForm.controls['bs']" [ctrl]="employeeForm.controls['bs']">
+
+                  <!-- [errors]="employeeForm.controls['bs'].errors" -->
+                </app-my-input>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row pt-1">
+          <div class="pull-left">
+            <button class="btn btn-primary" [disabled]="employeeForm.invalid" type="submit">Save</button>
+          </div>
+          <div class="pull-right">
+            <button class="btn btn-primary" (click)="onReset()">Reset</button>
+          </div>
+        </div>
+
+        <!-- <app-input-field-error-message [errors]="brokerForm.controls['name'].errors"
+										[ctrl]="brokerForm.controls['name']"></app-input-field-error-message> -->
+      </form>
+    </div>
+
+    <div class="col-lg-2">
+    </div>
+  </div>
+
+</div>

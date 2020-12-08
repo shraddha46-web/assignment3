@@ -1,0 +1,31 @@
+<br>
+<br>
+
+<a class="btn btn-primary pull-right" routerLink = "/add-emp/id" routerLinkActive="active-link"> Add Emp</a>
+<br>
+<br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col" *ngFor="let col of columns">{{col}}</th>
+       <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let emp of showEmpList ; let i = index">
+        <th scope="row"  >{{emp.id}}</th>
+        <th scope=""  >{{emp.name}}</th>
+        <th scope=""  >{{emp.phone}}</th>
+
+        <td>  
+            <a class="btn btn-primary" routerLink = "/add-emp/{{emp.id}}">Edit</a>
+            &nbsp;
+            <a class="btn btn-primary" (click) = "deleteEmp(emp.id)">Delete</a>
+         
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>
+
+ 
